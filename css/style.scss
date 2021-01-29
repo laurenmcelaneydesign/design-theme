@@ -1,0 +1,79 @@
+@import "_breakpoints.scss";
+/* Variables
+================================*/
+$primary-color: rgb(53, 53, 155);
+$headings-font: 'Playfair Display', serif;
+$body-font: stolzl, sans-serif;
+
+/* Main
+================================*/
+html { font-size: 62.5%; }
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    font-family: $body-font;
+    font-weight: 300;
+    font-style: normal;
+    color: $primary-color;
+    line-height: 3rem;
+    background: aliceblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: $headings-font;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+h2 { font-size: 2.8rem; }
+
+@include tablet-portrait {
+    h1 { font-size: 6.5rem; }
+    h2 { font-size: 4.5rem; }
+} 
+/* Links */
+a:link {
+    color: $primary-color;
+    &:hover {
+        color: rgb(0,0,0,0.6)
+    }
+}
+a:visited, a:active { color: $primary-color; }
+
+/* Header
+================================*/
+
+.main-header {
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    'nav logo tools'
+    ;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 18px;
+    background-color: rgba(255,255,255,1);
+    position: absolute;
+    top:0; left:0; right:0;
+    z-index: 1;
+
+    a {text-decoration: none; }
+
+    &__logo {
+        grid-area: logo;
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+    
+    &__nav {
+        grid-area: nav;
+    }
+
+    &__tools {
+        grid-area: tools;
+    }
+}
